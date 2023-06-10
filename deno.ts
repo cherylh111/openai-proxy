@@ -8,10 +8,6 @@ const CHAT_API_PATH1 = "backend-api/conversation";
 
 serve(async (request) => {
   const url = new URL(request.url);
-
-  if (url.pathname === "/") {
-    return fetch(new URL("./Readme.md", import.meta.url));
-  }
   
   url.host = OPENAI_API_HOST;
   
