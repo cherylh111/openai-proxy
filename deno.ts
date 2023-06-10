@@ -15,7 +15,7 @@ serve(async (request) => {
   
   if (url.pathname.includes("api/conversations")) {
     const newUrl = url.replace(PANDORA_API_PATH, CHAT_API_PATH);
-    return await fetch(url, request);
+    return await fetch(newUrl, request);
   }
 
   console.log("URL:", url);
