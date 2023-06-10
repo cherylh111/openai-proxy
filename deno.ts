@@ -10,5 +10,7 @@ serve(async (request) => {
   }
 
   url.host = OPENAI_API_HOST;
+  console.log("URL:", url);
+  console.log("Request:", request);
   return await fetch(url, request);
 });
