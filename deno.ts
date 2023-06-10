@@ -16,17 +16,11 @@ serve(async (request) => {
   url.host = OPENAI_API_HOST;
   
   if (url.pathname.includes(PANDORA_API_PATH)) {
-    const newUrl = url.replace(PANDORA_API_PATH, CHAT_API_PATH);
-    console.log("URL:", url);
-    console.log("Request:", request);
-    return await fetch(newUrl, request);
+    url.pathname = url.pathname.toString().replace(PANDORA_API_PATH, CHAT_API_PATH);
   }
 
- if (url.pathname.includes(PANDORA_API_PATH1)) {
-    const newUrl = url.replace(PANDORA_API_PATH1, CHAT_API_PATH1);
-    console.log("URL:", url);
-    console.log("Request:", request);
-    return await fetch(newUrl, request);
+  if (url.pathname.includes(PANDORA_API_PATH1)) {
+    url.pathname = url.pathname.toString().replace(PANDORA_API_PATH1, CHAT_API_PATH1);
   }
   
   console.log("URL:", url);
